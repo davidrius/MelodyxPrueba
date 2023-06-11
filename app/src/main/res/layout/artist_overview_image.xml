@@ -1,28 +1,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/artistImage"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitStart"
-        android:adjustViewBounds="true"
-        android:foreground="#58000000"
-        />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/artistName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:fontFamily="@font/gothammedium"
-        android:padding="8dp"
-        android:textColor="#FFFFFF"
-        android:textSize="70sp"
-        android:textStyle="bold"
-        />
+        <ImageView
+            android:id="@+id/artistImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:adjustViewBounds="true"
+            android:foreground="#58000000"
+            />
+
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:fontFamily="@font/gothammedium"
+            android:padding="8dp"
+            android:textColor="#FFFFFF"
+            android:textSize="70sp"
+            android:textStyle="bold"
+            />
 
 </RelativeLayout>
