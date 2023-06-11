@@ -90,8 +90,10 @@ public class AdapterPersonalizadoArtistaPrueba extends ArrayAdapter<ArtistasSpot
             LayoutInflater inflater = LayoutInflater.from(getContext());
             if (position == 0) {
                 convertView = inflater.inflate(R.layout.artist_overview_image, parent, false);
-            } else {
+            } else if (position == 1) {
                 convertView = inflater.inflate(R.layout.artist_overview_top_tracks_list, parent, false);
+            } else {
+                convertView = inflater.inflate(R.layout.artist_overview_layout, parent, false);
             }
         }
 
@@ -104,7 +106,9 @@ public class AdapterPersonalizadoArtistaPrueba extends ArrayAdapter<ArtistasSpot
             tvArtistName.setText(artistasSpotify.getArtistName());
             Glide.with(getContext()).load(artistasSpotify.getArtistAvatarImage()).into(ivArtistImage);
 
-        } else {
+        } if (position == 1) {
+
+
             // Código para artist_overview_top_tracks_list.xml
             //TextView tvSeguidores = convertView.findViewById(R.id.txtSeguidores);
             TextView tvTrackName = convertView.findViewById(R.id.txtTrackName);
@@ -117,6 +121,12 @@ public class AdapterPersonalizadoArtistaPrueba extends ArrayAdapter<ArtistasSpot
             //getTrackImage()
             Glide.with(getContext()).load(artistasSpotify.getAlbumImage()).into(ivTrackImage);
 
+        }else{
+            ImageView ivArtistImage = convertView.findViewById(R.id.artistImage);
+            TextView tvArtistName = convertView.findViewById(R.id.artistName);
+
+            tvArtistName.setText(artistasSpotify.getArtistName());
+            Glide.with(getContext()).load(artistasSpotify.getArtistAvatarImage()).into(ivArtistImage);
         }
 
         convertView.setOnClickListener(new View.OnClickListener() {
@@ -134,7 +144,6 @@ public class AdapterPersonalizadoArtistaPrueba extends ArrayAdapter<ArtistasSpot
                 mContext.startActivity(intent);*/
             }
         });
-
         return convertView;
     }
 

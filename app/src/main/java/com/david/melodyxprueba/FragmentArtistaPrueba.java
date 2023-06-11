@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.david.melodyxprueba.databinding.ArtistOverviewLayoutBinding;
 import com.david.melodyxprueba.databinding.FragmentArtistaOverviewBinding;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
@@ -84,10 +85,11 @@ public class FragmentArtistaPrueba extends Fragment {
             handler.post(() -> {
                 adapter1.clear();
                 adapter1.addAll(finalArtistas);
+                adapter1.notifyDataSetChanged();
             });
         });
 
-        FancyToast.makeText(getContext(), "Cargando...", FancyToast.LENGTH_LONG, FancyToast.CONFUSING, false).show();
+        //FancyToast.makeText(getContext(), "Cargando...", FancyToast.LENGTH_LONG, FancyToast.CONFUSING, false).show();
     }
 
     @Override
